@@ -1,0 +1,26 @@
+{
+  "name": "dynamodb-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "create": "node dist/index.js create",
+    "getById": "node dist/index.js getById"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.489.0",
+    "@aws-sdk/lib-dynamodb": "^3.489.0",
+    "@types/uuid": "^9.0.7",
+    "chalk": "^4.1.2",
+    "commander": "^11.1.0",
+    "uuid": "^9.0.1"
+  }
+}
