@@ -1,1 +1,1 @@
-export * from './organization-respository';
+export * from "./organization";
