@@ -1,6 +1,8 @@
+import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
 import Ajv from "ajv";
 import chalk from "chalk";
 import { program } from "commander";
+import { DynamoDbOrganizationRepository } from "./repositories/organization/dynamo-db";
 import schemas from "./types.schema.json";
 
 console.log(chalk.green("Initializing..."));
@@ -9,11 +11,13 @@ const ajv = new Ajv({
   allErrors: true,
 });
 
-// const client = new DynamoDBClient({
-//   endpoint: "http://127.0.0.1:4566"
-// });
+const client = new DynamoDBClient({
+  endpoint: "http://127.0.0.1:4566",
+});
 
-// const organizationRepository = DynamoDbOrganizationRepository(client);
+const organizationRepository = DynamoDbOrganizationRepository(client);
+
+organizationRepository.create("test");
 
 program
   .command("create")
